@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Spa</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .menu-open {
+            transform: translateX(0);
+        }
+        .menu-closed {
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Video Background -->
+    <video autoplay loop muted class="video-bg">
+        <source src="assets/Spa.mp4" type="video/mp4">
+    </video>
+
+    <!-- Navigation -->
+    <nav class="bg-transparent absolute top-0 left-0 w-full flex justify-between items-center p-6">
+        <div class="text-white text-2xl font-bold">Luxury Spa</div>
+        <div class="hidden md:flex space-x-6">
+            <a href="#home" class="text-white hover:text-gray-300">Home</a>
+            <a href="#services" class="text-white hover:text-gray-300">Services</a>
+            <a href="#gallery" class="text-white hover:text-gray-300">Gallery</a>
+            <a href="#testimonials" class="text-white hover:text-gray-300">Testimonials</a>
+            <a href="#contact" class="text-white hover:text-gray-300">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="menuButton" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-gray-800 bg-opacity-90 z-50 flex flex-col space-y-6 p-6 transform menu-closed transition-transform duration-300 md:hidden">
+        <a href="#home" class="text-white text-2xl">Home</a>
+        <a href="#services" class="text-white text-2xl">Services</a>
+        <a href="#gallery" class="text-white text-2xl">Gallery</a>
+        <a href="#testimonials" class="text-white text-2xl">Testimonials</a>
+        <a href="#contact" class="text-white text-2xl">Contact</a>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="h-screen flex flex-col justify-center items-center text-center">
+        <h1 class="text-white text-6xl font-bold mb-4">Sua beleza, minha paixão</h1>
+        <a href="#services" class="bg-white text-gray-800 px-6 py-3 rounded-full text-xl hover:bg-gray-200 transition">Explore nossos serviços</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Nossos Serviços</h2>
+            <div class="flex flex-wrap justify-center -mx-4">
+                <!-- Example Service -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img src="assets/1.webp" alt="Service 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Serviço 1</h3>
+                            <p class="text-gray-700 mb-3">Descrição detalhada do serviço oferecido pelo estúdio.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more services as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Galeria</h2>
+            <div class="flex flex-wrap justify-center -mx-4">
+                <!-- Example Gallery Image -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="assets/2.webp" alt="Gallery Image 1" class="w-full h-48 object-cover transform hover:scale-105 transition">
+                    </div>
+                </div>
+                <!-- Add more gallery images as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Depoimentos</h2>
+            <div class="flex flex-wrap justify-center -mx-4">
+                <!-- Example Testimonial -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <p class="text-gray-700 mb-4">"O serviço foi excepcional, adorei o resultado!"</p>
+                        <p class="text-gray-500 font-bold">Cliente Satisfeito</p>
+                    </div>
+                </div>
+                <!-- Add more testimonials as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Contato</h2>
+            <div class="flex flex-wrap justify-center -mx-4">
+                <div class="w-full lg:w-1/2 px-4 mb-8">
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-3">Informações de Contato</h3>
+                        <p class="text-gray-700 mb-3">Horário de funcionamento: Segunda a Sexta, 9h às 18h</p>
+                        <p class="text-gray-700 mb-3">Telefone: (11) 1234-5678</p>
+                        <a href="https://wa.me/551112345678" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition">Contato via WhatsApp</a>
+                    </div>
+                </div>
+                <!-- Add more contact info as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/551112345678" class="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.478 14.145c-.253-.126-1.496-.735-1.727-.819-.23-.085-.398-.126-.566.127-.17.254-.65.819-.797.983-.147.17-.292.191-.545.064-.253-.127-1.066-.393-2.033-1.253-.752-.67-1.26-1.498-1.408-1.75-.147-.253-.016-.391.11-.518.112-.112.253-.297.378-.444.127-.127.17-.212.253-.339.085-.127.042-.254-.021-.38-.064-.127-.566-1.408-.778-1.928-.21-.508-.424-.439-.567-.439-.147 0-.297-.017-.456-.017-.148 0-.38.042-.582.255-.191.212-.748.73-.748 1.781 0 1.051.789 2.068.897 2.212.106.148 1.556 2.378 3.776 3.335.528.228.941.363 1.262.464.53.17 1.012.148 1.39.085.423-.064 1.298-.53 1.481-1.045.17-.508.17-.944.127-1.045-.042-.085-.19-.127-.444-.253z" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.067 1.999c-5.511 0-9.998 4.486-9.998 9.997 0 1.767.468 3.498 1.354 5.026L1.645 22l5.14-1.747c1.454.797 3.1 1.213 4.785 1.213 5.511 0 9.997-4.486 9.997-9.997S17.578 1.999 12.067 1.999zm6.35 16.346c-1.06 1.063-2.334 1.83-3.752 2.208-1.43.38-2.94.367-4.36-.036a8.156 8.156 0 01-3.913-2.329 8.086 8.086 0 01-1.86-3.096c-.39-1.475-.379-3.032.029-4.497a8.165 8.165 0 012.308-3.907c1.062-1.062 2.335-1.83 3.752-2.209 1.43-.38 2.94-.367 4.36.036a8.16 8.16 0 013.914 2.329 8.094 8.094 0 011.86 3.096c.39 1.475.379 3.032-.029 4.497a8.165 8.165 0 01-2.308 3.907z" />
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p class="text-sm">&copy; 2023 Luxury Spa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuButton').addEventListener('click', function () {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('menu-open');
+            menu.classList.toggle('menu-closed');
+        });
+    </script>
+</body>
+
+</html>
